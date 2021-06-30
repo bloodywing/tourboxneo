@@ -1,1 +1,1 @@
-SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="0483", RUN+="/usr/bin/tourboxneo"
+SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="0483", RUN+="/usr/bin/tourboxneo /dev/%k"
