@@ -7,7 +7,7 @@ This Python script translates the serial IO to an evdev/uinput device.
 
     sudo pip install git+https://github.com/bloodywing/tourboxneo
     
-of
+or
     
     sudo pip install tourboxneo
     
