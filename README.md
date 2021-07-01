@@ -6,6 +6,10 @@ This Python script translates the serial IO to an evdev/uinput device.
 ## Install
 
     sudo pip install git+https://github.com/bloodywing/tourboxneo
+    
+of
+    sudo pip install tourboxneo
+    
 it needs to install a udev rule.
 
 ## Last words
