@@ -18,7 +18,7 @@ class TourBox:
         self.controller = None
 
     def start(self):
-        self.serial = serial.PosixPollSerial(self.dev_path, timeout=2000)
+        self.serial = serial.Serial(self.dev_path)
         self.controller = UInput(CAP, name='TourBox', vendor=0x0483, product=0x5740)
 
         reconnects = 0
