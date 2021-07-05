@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+command="/usr/bin/tourboxneo"
+command_user="root"
+pidfile="/run/$RC_SVCNAME.pid"
+tty=/dev/ttyACM0
+
+start() {
+    ebegin "Starting $RC_SVCNAME"
+    start-stop-daemon -b --start \
+        --exec $command \
+        --pidfile $pidfile \
+        -- \
+        $tty
+    eend $?
+}
