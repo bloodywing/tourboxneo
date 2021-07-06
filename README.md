@@ -11,7 +11,7 @@ or
     
     sudo pip install tourboxneo
     
-it needs to install a udev rule.
+The setup installs a init script in `/etc/init.d/`
 
 ## Last words
 
