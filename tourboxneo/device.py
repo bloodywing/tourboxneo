@@ -41,17 +41,13 @@ class TourBox:
         p.write_text(pid)
         self.serial = serial.Serial(self.dev_path, timeout=2)
         self.controller = UInput(CAP, name='TourBox', vendor=0x0483, product=0x5740)
-        reconnects = 0
         while not self.killer.kill_now:
             try:
                 x = self.serial.read()
             except SerialException:
                 logging.warning(f"Can't read: {self.dev_path}, maybe unplugged or no permission?")
-                if reconnects < 5:
-                    sleep(1)
-                    reconnects += 1
-                    continue
-                return 1
+                sleep(1)
+                continue
 
             reconnects = 0
             for m in MAPPING.get(x, []):
